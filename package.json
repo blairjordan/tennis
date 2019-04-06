@@ -1,0 +1,18 @@
+{
+  "name": "tennis",
+  "version": "1.0.0",
+  "description": "A tennis scoring system.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha src/*.spec.js"
+  },
+  "keywords": [
+    "tennis",
+    "scoring"
+  ],
+  "author": "B. Jordan",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^6.0.2"
+  }
+}
