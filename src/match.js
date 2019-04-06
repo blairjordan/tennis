@@ -61,23 +61,19 @@ class Match {
         this.newGame();
     }
 
-    currentGame() { 
-        return this.sets[this.sets.length - 1];
-    }
-
     newGame() {
         this.sets.push(new Game(this.players, this.isTieBreak()));
     }
 
-    getPlayerIdx(name) {
-        return this.players.findIndex(p => p.name === name);
-    };
+    currentGame() { 
+        return this.sets[this.sets.length - 1];
+    }
 
     pointWonBy(playerName) {
         if (this.currentGame().isGameOver())
             this.newGame();
 
-        this.currentGame().pointWon(this.getPlayerIdx(playerName));
+        this.currentGame().pointWon(this.players.findIndex(p => p.name === playerName));
     }
 
     matchScore() { 
@@ -111,7 +107,6 @@ class Match {
     score() {
         return `${this.matchScore().join("-")}${(!this.currentGame().isGameOver()) ? ", " + this.currentGame().gameScore() : ""}`;
     }
-
 };
 
 module.exports = { Match };
