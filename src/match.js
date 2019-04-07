@@ -49,7 +49,6 @@ class Game {
         if (isDuece(p1.score, p2.score))
             return DEUCE;
         
-
         return `${TENNIS_SCORES[p1.score]}-${TENNIS_SCORES[p2.score]}`;   
     }
 };
